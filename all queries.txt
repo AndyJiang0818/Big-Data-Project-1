@@ -1,0 +1,19 @@
+Query 1:
+db.collection.find()
+
+{
+'disease_id': [],
+'disease_name': [],
+'drug_name': [],
+'gene_name': [],
+'disease_occurs': []
+}
+
+Query 2:
+MATCH (a:Compound)-[:upregulates]-(:Gene)-[:downregulates]-(b:Disease)
+WHERE NOT (a)-[:treats]->(b)
+RETURN DISTINCT a, b
+
+MATCH (a:Compound)-[:downregulates]-(:Gene)-[:upregulates]-(b:Disease)
+WHERE NOT (a)-[:treats]->(b)
+RETURN DISTINCT a, b
