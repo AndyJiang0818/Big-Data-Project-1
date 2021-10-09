@@ -1,5 +1,10 @@
 # Model HetioNet
 
+## Overview
+1. Build a database system to model HetioNet.
+2. Given a disease id, what is its name, what are drug names that can treat or palliate this disease, what are gene names that cause this disease, and where this disease occurs? Obtain and ouput this info in a single query. 
+3. Find all compounds that can treat a new disease name. Obtain and ouput all drugs in a single query. 
+
 ## Run
 ### STEP 1:
 - Open the mongodb.py file
