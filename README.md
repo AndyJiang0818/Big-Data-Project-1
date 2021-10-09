@@ -29,3 +29,21 @@
 #### Query 2: 
 1. A compound can treat a disease if the compound or its resembled compound up-regulates/down- regulates a gene, but the location down-regulates/up-regulates the gene in an opposite direction where the disease occurs. Find all compounds that can treat a new disease name (i.e. the missing edges between compound and disease excluding existing drugs) 
 2. All the data are stored in neo4j 
+  
+## Potential Improvements
+1. Choose a better NoSQL database
+2. Design a better database schema
+3. Create a better index to support read operations
+4. Create a better index to support the query
+5. Reduce $lookup: For user running too many $lookup operations on our data. Take
+advantage of MongoDB’s rich schema model to embed related data in a single collection.
+6. Avoid unbounded array: If the documents contain array fields with many elements, which
+can degrade query performance.
+7. Remove unnecessary index: unnecessary indexes in the collection, which can consume
+disk space and degrade write performance.
+8. Reduce the size of large documents: If we have excessively large documents, which can
+degrade the performance of our most frequent queries.
+9. Reduce number of collections: If we have an exceedingly high number of collections in a
+database, which can result in unnecessary disk space usage.
+10. Improve of case insensitive regex queries: we are executing case-insensitive regex
+queries which could be improved with an index. 
